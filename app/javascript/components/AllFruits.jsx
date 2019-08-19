@@ -1,10 +1,10 @@
 import React from 'react';
+import Fruit from './Fruit';
 
-const AllFruits = ({fruits}) => {
+const AllFruits = ({ fruits, handleUpdate, handleDelete }) => {
     const _fruits = fruits.map(fruit => (
           <div key={fruit.id}>
-            <h1>{fruit.name}</h1>
-            <p>{fruit.description}</p>
+            <Fruit fruit={fruit} handleUpdate={handleUpdate} handleDelete={handleDelete}/>
           </div>
         )
     )
