@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 
-class Fruit extends React.Component{
+export default class Fruit extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -36,14 +36,12 @@ class Fruit extends React.Component{
             ? <input type='text' ref={input => this.description = input} defaultValue={fruit.description}/>
             :<p>{fruit.description}</p>
         return(
-            <div>
+            <Fragment>
                 {name}
                 {description}
                 <button onClick={() => handleEdit()}>{editable ? 'Submit' : 'Edit'}</button>
                 <button onClick={() => handleDelete(fruit.id)}>Delete</button>
-            </div>
+            </Fragment>
         )      
     }
 }
-
-export default Fruit;
